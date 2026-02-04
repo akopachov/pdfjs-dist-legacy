@@ -77795,6 +77795,10 @@ class XRef {
         offset++;
       }
 
+      if (offset - startOffset > 0x1fffffe8) {
+        offset = startOffset + 0x1fffffe8;
+      }
+      
       const token = Buffer.from(data.subarray(startOffset, offset)).toString('ascii');
       return token;
     }

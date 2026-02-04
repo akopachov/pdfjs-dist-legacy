@@ -1,6 +1,6 @@
 {
   "name": "pdfjs-dist-legacy-fixed",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "homepage": "https://github.com/akopachov/pdfjs-dist-legacy",
   "bugs": "https://github.com/akopachov/pdfjs-dist-legacy/issues",
   "description": "a legacy implementation of pdfjs-dist",
