@@ -77786,18 +77786,16 @@ class XRef {
           LT = 0x3c;
 
     function readToken(data, offset) {
-      let token = "",
-          ch = data[offset];
+      const dataLen = data.length;
+      const startOffset = offset;
 
-      while (ch !== LF && ch !== CR && ch !== LT) {
-        if (++offset >= data.length) {
-          break;
-        }
-
-        token += String.fromCharCode(ch);
-        ch = data[offset];
+      while (offset < dataLen) {
+        const ch = data[offset];
+        if (ch === LF || ch === CR || ch === LT) break;
+        offset++;
       }
 
+      const token = Buffer.from(data.subarray(startOffset, offset)).toString('ascii');
       return token;
     }
 
